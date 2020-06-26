@@ -1,0 +1,56 @@
+﻿@page
+@model TestFinal.Pages.Producto.ListarModel
+@{
+    ViewData["Title"] = "Listar";
+
+}
+
+<h1>Listado de Prductos</h1>
+
+<form method="get">
+    <div class="form-group">
+        <div class="input-group">
+            <input type="search" class="form-control" asp-for="SearchTerm" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary">
+                    Search
+                </button>
+            </span>
+        </div>
+    </div>
+</form>
+<p>
+    
+    <a asp-page="./Crear">Create New</a>
+
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Accion</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var producto in Model.ListaProductos)
+        {
+            <tr>
+                <th scope="row">@producto.idProducto</th>
+                <td>@producto.NombreProducto</td>
+                <td>
+                    <a asp-page="./Detalle" asp-route-productoId="@producto.idProducto">
+                        Detalle
+                    </a>
+                    <a asp-page="./Editar" asp-route-productoId="@producto.idProducto">
+                        Editar
+                    </a>
+                    <a asp-page="./Eliminar" asp-route-productoId="@producto.idProducto">
+                        Eliminar
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

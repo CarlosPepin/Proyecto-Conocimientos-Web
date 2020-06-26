@@ -1,0 +1,35 @@
+﻿@page
+@model TestFinal.Pages.Producto.CrearModel
+
+@{
+    ViewData["Title"] = "Crear";
+}
+
+<h1>Crear</h1>
+
+
+<div class="row">
+    <form method="post">
+        <div class="form-group">
+            <label asp-for="nuevoProducto.NombreProducto"></label>
+            <input asp-for="nuevoProducto.NombreProducto" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="nuevoProducto.Description"></label>
+            <input asp-for="nuevoProducto.Description" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="nuevoProducto.idCategoria"></label>
+            <input asp-for="nuevoProducto.idCategoria" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-defaul" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-page="./Listar" class="btn btn-outline-primary">Todos los productos</a>
+</div>
+
+

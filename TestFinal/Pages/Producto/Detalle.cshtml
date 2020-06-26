@@ -1,0 +1,22 @@
+﻿@page
+@model TestFinal.Pages.Producto.DetalleModel
+@{
+    ViewData["Title"] = "Detalle";
+}
+
+<h1>Detalle</h1>
+
+<div>
+    Id: @Model.Producto.idProducto
+</div>
+<div>
+    Nombre: @Model.Producto.NombreProducto
+</div>
+<div>
+    Descripcion: @Model.Producto.Description
+</div>
+<div>
+    Categoria: @Model.Producto.idCategoria
+</div>
+
+<a asp-page="./Listar" >Todos los productos</a>
